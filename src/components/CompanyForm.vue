@@ -21,10 +21,8 @@
 
 <script>
     export default {
-        name: 'CompanyPreview',
-        props: {
-            preview: Object
-        },
+        name: 'CompanyForm',
+        props: {},
         methods: {}
     }
 </script>
