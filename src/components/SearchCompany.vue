@@ -14,7 +14,7 @@
         或
       </div>
       <div class="md-layout-item md-size-20 hd-left-text">
-        <md-button class="md-primary md-dense md-raised">新增商家</md-button>
+        <md-button class="md-primary md-dense md-raised" v-on:click.prevent="createNew()">新增商家</md-button>
       </div>
     </div>
     <div
@@ -45,6 +45,9 @@
             doSearch: function (event) {
                 if (event) event.preventDefault();
                 this.companyPreviews = this.$compDb.find(this.searchValue)
+            },
+            createNew: function () {
+                this.$router.push({name: 'frontMatter', params: {id: "someId"}})
             }
         },
         components: {
@@ -79,6 +82,6 @@
   }
 
   .hd-left-text {
-    text-align:left
+    text-align: left
   }
 </style>

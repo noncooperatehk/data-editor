@@ -1,32 +1,36 @@
 <template>
-  <div>
-    <md-card>
-      <md-card-media>
-        <img v-bind:src="preview.imageUrl" crossorigin="">
-      </md-card-media>
-      <md-card-header>
-        <md-card-header-text>
-          <div class="md-title">{{preview.title}}</div>
-          <div class="md-subhead">{{preview.shortSummary}}</div>
-          <div class="md-subhead">{{preview.address}}</div>
-        </md-card-header-text>
-      </md-card-header>
+    <div>
+        <md-card>
+            <md-card-media>
+                <img v-bind:src="preview.imageUrl" crossorigin="">
+            </md-card-media>
+            <md-card-header>
+                <md-card-header-text>
+                    <div class="md-title">{{preview.title}}</div>
+                    <div class="md-subhead">{{preview.shortSummary}}</div>
+                    <div class="md-subhead">{{preview.address}}</div>
+                </md-card-header-text>
+            </md-card-header>
 
-      <md-card-actions>
-        <md-button>詳情</md-button>
-      </md-card-actions>
-    </md-card>
-  </div>
+            <md-card-actions>
+                <md-button v-on:click.prevent="goToFrontMatter()">更改商家</md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
 </template>
 
 <script>
-    export default {
-        name: 'CompanyPreview',
-        props: {
-            preview: Object
-        },
-        methods: {}
-    }
+export default {
+  name: 'CompanyPreview',
+  props: {
+    preview: Object
+  },
+  methods: {
+      goToFrontMatter: function () {
+          this.$router.push({name: 'frontMatter', params: {id: "someId"}})
+      }
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
