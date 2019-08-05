@@ -14,10 +14,11 @@ Vue.use(VueMaterial);
 Vue.use(VueRouter);
 
 const Bar = {template: '<div>This is form of {{ $route.params.id }}</div>'} //TODO: remove vue.config.js real time config after you remove this
+const baseUrl = process.env.NODE_ENV === 'production' ? '/data-editor/' : '/';
 
 const router = new VueRouter({
   mode: 'history',
-  base: "/", //TODO: change this to github page url in production mode.
+  base: baseUrl, //TODO: change this to github page url in production mode.
   routes: [
     {path: '/', name: 'search', component: SearchCompany},
     {path: '/company/:id', name: 'updateCompanyDetail', component: Bar}
