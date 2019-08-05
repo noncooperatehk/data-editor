@@ -1,4 +1,4 @@
-# hongkong-guide
+# hongkong-guide data editor
 
 ## Project setup
 ```
